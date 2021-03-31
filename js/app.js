@@ -44,6 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let scrollButton = document.querySelector('.autoshow__btn__mode');
     let scrollIcon = document.getElementById('sliderIcon');
 
+    // Bar
+    let sliderBar = document.getElementById('sliderBar');
+    let width = 0;
+
     // ArrowsClick
     // ======================
 
@@ -53,15 +57,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (state == 'true') {
             scrollIcon.classList.add('fa-pause');
+            sliderBar.classList.remove('hide');
             Loading();
         } else {
             scrollIcon.classList.add('fa-play');
+            sliderBar.classList.add('hide');
 
             i++;
 
             sliderImg.setAttribute('src', images[i]);
 
-            //dotsContainer.classList.remove('hide');
             leftBtn.classList.remove('hide');
             rightBtn.classList.remove('hide');
 
@@ -122,6 +127,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Switch image
         sliderImg.setAttribute('src', NextImage);
         localStorage.setItem('slideToRemember', i-1);
+        sliderBar.style.width = '0';
+        width = 0;
+
 
         if (state == 'true') {
             PreLoading();
@@ -146,13 +154,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             dots.forEach(removeDotsClass)
             function removeDotsClass(dot) {
-                dot.classList.remove("active");
+                dot.classList.remove('active');
             };
 
             let currDot = dot;
-            currDot.classList.add("active");
+            currDot.classList.add('active');
 
-            let currDotNum = currDot.getAttribute("data-attr");
+            let currDotNum = currDot.getAttribute('data-attr');
             i = currDotNum;
             sliderImg.setAttribute('src', images[i]);
             localStorage.setItem('slideToRemember', i-1);
@@ -171,24 +179,25 @@ document.addEventListener('DOMContentLoaded', function() {
             state = 'false';
             localStorage.setItem('state', state);
 
-            //dotsContainer.classList.remove('hide');
+            sliderBar.classList.add('hide');
             leftBtn.classList.remove('hide');
             rightBtn.classList.remove('hide');
+
         } else {
             scrollIcon.classList.add('fa-pause');
             state = 'true';
             localStorage.setItem('state', state);
 
-            //dotsContainer.classList.add('hide');
+            sliderBar.classList.remove('hide');
             leftBtn.classList.add('hide');
             rightBtn.classList.add('hide');
         }
     }
 
     scrollButton.addEventListener("click", scrollButtonClick);
-    scrollButton.addEventListener('click', throttle(PreLoading, 3000));
+    scrollButton.addEventListener('click', PreLoading);
 
-    function throttle(f, t) {
+    /*function throttle(f, t) {
         return function (args) {
         let previousCall = this.lastCall;
         this.lastCall = Date.now();
@@ -196,10 +205,29 @@ document.addEventListener('DOMContentLoaded', function() {
             f(args);
             }
         }
-    }
+    }*/
 
     function PreLoading() {
-        timerId = setTimeout(Loading, 3000);
+
+        let barId = setInterval(Move, 30);
+        function Move(){
+            width++;
+            sliderBar.style.width = width + '%';
+            if (state == 'true') {
+                if (width >= 100){
+
+                    width = 0;
+
+                    clearInterval(barId);
+
+                    let timerId = setTimeout(Loading, 500);
+                };
+            } else {
+                clearInterval(barId);
+                width = 0;
+                sliderBar.style.width = '0';
+            }
+        }
     }
 
     function Loading() {

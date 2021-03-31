@@ -1,0 +1,446 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    color: #434140;
+}
+
+.container {
+    width: 100%;
+    max-width: 1275px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* Section */
+/* =======================*/
+
+.section {
+    background-color: #E5E5E5;
+}
+
+.section--intro {
+    background: url('../images/story/2.jpg') center, no-repeat;
+    background-size: cover;
+    background-color: #D0E8EA;
+
+    width: 100%;
+    height: calc(100vh - 73px);
+}
+
+.section__title {
+    font-size: 56px;
+    font-weight: 700;
+    color: #1B365D;
+
+    line-height: 1.1;
+}
+
+/* Header */
+/* =======================*/
+
+.header {
+    padding: 0;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    padding: 22px 0 9px 0;
+}
+
+.nav__inner {
+    display: flex;
+
+    align-items: center;
+}
+
+.nav {
+    font-size: 16px;
+    color: #1B365D;
+
+    line-height: 1.34;
+}
+
+.nav__link {
+    margin-right: 50px;
+}
+
+.nav__link:last-of-type {
+    margin: 0;
+}
+
+.nav__link:hover {
+    text-decoration: underline;
+}
+
+.login__btn {
+    padding: 6px 24px;
+
+    background-color: #fff;
+    border: 1px solid #A7BBC9;
+    border-radius: 4px;
+    margin-left: 100px;
+
+    font-size: 11px;
+    font-weight: 700;
+    color: #1B365D;
+
+    line-height: 1.55;
+
+    transition: background-color .2s linear, color .2s linear;
+}
+
+.login__btn:hover {
+    background-color: #1B365D;
+    color: #fff;
+}
+
+/* Intro */
+/* =======================*/
+
+.intro {
+    display: flex;
+
+    width: 100%;
+    max-width: 404px;
+    height: 100%;
+}
+
+.intro__inner {
+    width: 100%;
+
+    margin: auto 0;
+}
+
+.intro__text {
+    margin: 20px 0 40px 0;
+
+    font-size: 18px;
+    font-weight: 700;
+    color: #434140;
+
+    line-height: 1.3;
+}
+
+.intro__btn {
+    background-color: #fff;
+
+    padding: 13px 36px;
+    border: none;
+    border-radius: 24px;
+
+    font-size: 14px;
+    font-weight: 700;
+    color: #1B365D;
+    line-height: 1.4;
+
+    transition: background-color .2s linear, color .2s linear;
+}
+
+.intro__btn:hover {
+    background-color: #1B365D;
+    color: #fff;
+}
+
+.intro__btn:last-child {
+    background-color: transparent;
+}
+
+.intro__btn:last-child:hover {
+    background-color: #1B365D;
+
+}
+
+/* Camera */
+/* =======================*/
+
+.camera {
+    padding-top: 114px;
+    background-color: #fff;
+
+    position: relative;
+}
+
+.camera__devices {
+    display: flex;
+    justify-content: space-between;
+}
+
+.devices__card {
+    width: 24%;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.devices__photo {
+    cursor: pointer;
+
+    transition: transform .4s ease-out;
+}
+
+.devices__photo:hover {
+    transform: scale(1.1);
+}
+
+.devices__content {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    z-index: 1;
+
+    transform: translateX(-50%);
+
+    width: 200px;
+
+    color: #fff;
+    text-align: center;
+}
+
+.devices__title {
+    font-size: 24px;
+    font-weight: 700;
+
+    line-height: 1.25;
+}
+
+.devices__text {
+    font-size: 15px;
+    font-weight: 500;
+
+    line-height: 1.4;
+
+    margin-bottom: 15px;
+}
+
+.devices__link {
+    font-size: 14px;
+    font-weight: 700;
+
+    line-height: 1.4;
+}
+
+.devices__link:hover {
+    text-decoration: underline;
+}
+
+.camera__title {
+    width: 100%;
+    max-width: 685px;
+    margin: 30px 0 400px 0;
+
+    font-size: 50px;
+    font-weight: 700;
+    color: #1B365D;
+
+    line-height: 1.1;
+}
+
+/* Slider */
+
+.slider__container {
+    width: 100%;
+    max-width: 1275px;
+    height: 575px;
+
+    position: absolute;
+    top: 879px;
+    left: 50%;
+    z-index: 1;
+
+    transform: translateX(-50%);
+}
+
+.slider {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+}
+
+.slider__img {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+
+.slider__autoshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: transparent;
+
+    opacity: 0;
+
+    transition: opacity .1s linear;
+}
+
+.slider__autoshow:hover {
+    opacity: .8;
+}
+
+.slider__autoshow__btn {
+    width: 120px;
+    height: 100px;
+    padding: 10px;
+    margin: auto;
+
+    border-radius: 10%;
+
+    cursor: pointer;
+}
+
+.autoshow__btn__mode {
+    width: 100%;
+    height: 100%;
+}
+
+.slider__icon {
+    font-size: 50px;
+    color: #fff;
+
+    margin: auto;
+}
+
+.slider__dots {
+    display: flex;
+
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hide {
+    display: none;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 10px;
+
+    border: 1px solid #fff;
+    border-radius: 50%;
+
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
+.slider__arrow-container {
+    position: absolute;
+    top: calc(50% - 45px);
+    right: 30px;
+    z-index: 1;
+
+    transform: translateY(-50%);
+
+    width: 90px;
+    height: 90px;
+
+    padding: 20px;
+
+    transform: rotate(45deg);
+
+    cursor: pointer;
+}
+
+.slider__arrow-container--right {
+    right: 0;
+    left: 30px;
+    transform: rotate(-135deg);
+}
+
+.slider__arrow {
+    width: 50px;
+    height: 50px;
+
+    border-top: 5px solid #fff;
+    border-right: 5px solid #fff;
+
+    cursor: pointer;
+}
+
+/* text-cards */
+
+.camera__text-cards {
+    background-color: #D0E8EA;
+}
+
+.text-cards__content {
+    display: flex;
+
+    padding: 250px 20px 50px 20px;
+}
+
+.text-cards__card {
+    width: 50%;
+    max-width: 357px;
+    margin-left: 160px;
+}
+
+.text-cards__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1B365D;
+
+    line-height: 1.25;
+}
+
+.text-cards__text {
+    font-size: 17px;
+    font-weight: 400;
+    color: #434141;
+
+    line-height: 1.35;
+
+    margin: 11px 0 15px 0;
+}
+
+.text-cards__link {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1B365D;
+
+    line-height: 1.4;
+}
+
+.text-cards__link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

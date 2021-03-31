@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             sliderImg.setAttribute('src', images[i]);
 
-            dotsContainer.classList.remove('hide');
+            //dotsContainer.classList.remove('hide');
             leftBtn.classList.remove('hide');
             rightBtn.classList.remove('hide');
 
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
             state = 'false';
             localStorage.setItem('state', state);
 
-            dotsContainer.classList.remove('hide');
+            //dotsContainer.classList.remove('hide');
             leftBtn.classList.remove('hide');
             rightBtn.classList.remove('hide');
         } else {
@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
             state = 'true';
             localStorage.setItem('state', state);
 
-            dotsContainer.classList.add('hide');
+            //dotsContainer.classList.add('hide');
             leftBtn.classList.add('hide');
             rightBtn.classList.add('hide');
         }

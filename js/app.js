@@ -130,9 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
         sliderBar.style.width = '0';
         width = 0;
 
-
         if (state == 'true') {
-            PreLoading();
+            let timerId = setTimeout(PreLoading, 500);
         }
     }
 
@@ -220,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     clearInterval(barId);
 
-                    let timerId = setTimeout(Loading, 500);
+                    let timer2Id = setTimeout(Loading, 300);
                 };
             } else {
                 clearInterval(barId);
@@ -234,9 +233,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (state == 'true') {
             ChangeImg('next');
         }
-
-//        console.log(state);
-//        console.log(i);
     }
 
     // Keyboard

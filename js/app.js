@@ -65,7 +65,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
             i++;
 
-            sliderImg.setAttribute('src', images[i]);
+            try {
+                smoothly(sliderImg, 'src', images[i]);
+            }
+            catch {
+                console.log('smoothly lib cant be loaded');
+                sliderImg.setAttribute('src', images[i]);
+            }
 
             leftBtn.classList.remove('hide');
             rightBtn.classList.remove('hide');
@@ -94,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 function removeDotsClass(dot) {
                     dot.classList.remove("active");
                 };
-
                 currDot.classList.add("active");
             }
         }
@@ -124,14 +129,16 @@ document.addEventListener('DOMContentLoaded', function() {
             switchDot(i);
         }
 
-        // Switch image
-        sliderImg.setAttribute('src', NextImage);
         localStorage.setItem('slideToRemember', i-1);
         sliderBar.style.width = '0';
         width = 0;
 
+        // Switch image
         if (state == 'true') {
             let timerId = setTimeout(PreLoading, 500);
+            smoothly(sliderImg, 'src', NextImage);
+        } else {
+            sliderImg.setAttribute('src', NextImage);
         }
     }
 
@@ -161,7 +168,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let currDotNum = currDot.getAttribute('data-attr');
             i = currDotNum;
+
             sliderImg.setAttribute('src', images[i]);
+
             localStorage.setItem('slideToRemember', i-1);
         });
     }

@@ -205,16 +205,6 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollButton.addEventListener("click", scrollButtonClick);
     scrollButton.addEventListener('click', PreLoading);
 
-    /*function throttle(f, t) {
-        return function (args) {
-        let previousCall = this.lastCall;
-        this.lastCall = Date.now();
-        if (previousCall === undefined || (this.lastCall - previousCall) > t) {
-            f(args);
-            }
-        }
-    }*/
-
     function PreLoading() {
 
         let barId = setInterval(Move, 30);

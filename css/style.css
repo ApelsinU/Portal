@@ -21,7 +21,7 @@ body {
 }
 
 .section--intro {
-    background: url('../images/story/2.jpg') center, no-repeat;
+    background: url('../images/intro/bg.jpg') center, no-repeat;
     background-size: cover;
     background-color: #D0E8EA;
 
@@ -109,6 +109,8 @@ body {
     width: 100%;
     max-width: 404px;
     height: 100%;
+
+    position: relative;
 }
 
 .intro__inner {
@@ -153,7 +155,58 @@ body {
 
 .intro__btn:last-child:hover {
     background-color: #1B365D;
+}
 
+.discount__link:hover
+.discount__title {
+    text-decoration: underline;
+}
+
+.discount__container {
+    display: flex;
+
+    width: 100%;
+    max-width: 500px;
+    height: 86px;
+
+    background-color: #F1C0C7;
+
+    padding: 25px 40px 25px 85px;
+
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    z-index: 1;
+
+        align-items: center;
+}
+
+.discount__icon {
+    margin-right: 16px;
+}
+
+.discount__icon img {
+    width: 100%;
+    max-width: 84px;
+    height: auto;
+}
+
+.discount__title {
+    font-size: 15px;
+    font-weight: 700;
+    font-style: normal;
+    color: #1B365D;
+
+    line-height: 1.4;
+}
+
+.discount__text {
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: #1B365D;
+
+    line-height: 1.4;
 }
 
 /* Camera */
@@ -408,6 +461,10 @@ body {
 .text-cards__card {
     width: 50%;
     max-width: 357px;
+    margin-left: 85px;
+}
+
+.text-cards__card:last-child {
     margin-left: 160px;
 }
 
@@ -440,6 +497,202 @@ body {
 .text-cards__link:hover {
     text-decoration: underline;
 }
+
+/* Camera */
+/* =======================*/
+
+.calls__inner {
+    display: flex;
+
+    padding: 15px 70px 155px ;
+}
+
+.calls__photo {
+    margin: 0 90px;
+}
+
+.calls__photo img {
+    width: 100%;
+    height: auto;
+    min-width: 360px;
+}
+
+.calls__content {
+    width: 44.5%;
+
+    margin-left: 55px;
+}
+
+.calls__icons {
+    display: flex;
+    justify-content: space-between;
+
+    width: 136px;
+    margin-bottom: 20px;
+}
+
+.calls__icons__link:hover {
+    transform: scale(1.05);
+}
+
+.calls__icon__container {
+    display: flex;
+
+    width: 60px;
+    height: 60px;
+
+    background-color: #1990FF;
+    border-radius: 50%;
+}
+
+.calls__icon__container--wapp {
+    background-color: #25D366;
+}
+
+.calls__icon {
+    font-size: 25px;
+    color: #fff;
+
+    margin: auto;
+}
+
+.calls__title {
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.1;
+
+    color: #1B365D;
+
+    margin-bottom: 20px;
+}
+
+.calls__text {
+    font-size: 17px;
+    line-height: 1.35;
+
+    color:#615E5C;
+
+    margin-bottom: 15px;
+}
+
+.calls__subtext {
+    font-size: 11px;
+    line-height: 1.6;
+
+    color: #AEABA8;
+}
+
+.calls__subtext__link {
+    text-decoration: underline;
+}
+
+.calls__subtext__link:hover {
+    color: #5c5a57;
+}
+
+/* Story */
+/* =======================*/
+
+.story {
+    background: url('../images/story/bg.jpg') center, no-repeat;
+    background-size: cover;
+
+    width: 100%;
+    height: 100vh;
+}
+
+.story__inner {
+    display: flex;
+    height: 100%;
+}
+
+.story__slider {
+    display: flex;
+    flex-direction: column;
+
+    margin: auto 0 60px;
+}
+
+.story__slider__item {
+    color: #fff;
+ /*   overflow: scroll;*/
+    width: 100%;
+    max-width: 425px;
+    height: 175px;
+
+    margin-bottom: 55px;
+
+    position: relative;
+}
+
+.story__slider__item:before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -24px;
+    z-index: 1;
+
+    width: 4px;
+    height: 216px;
+    background-color: #615E5C;
+;
+}
+
+.story__slider__item:after {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: -24px;
+    z-index: 1;
+
+    width: 4px;
+    height: 204px;
+    background-color: #ADD4E0;
+
+    border-radius: 102px;
+}
+
+.story__slider__title {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.story__slider__text {
+    font-size: 17px;
+    line-height: 1.35;
+
+    margin-bottom: 25px;
+}
+
+.story__slider__link {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.story__slider__link:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
